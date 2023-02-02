@@ -61,7 +61,9 @@ export const resolver = <T, Chain, R>(wretch: T & Wretch<T, Chain, R>) => {
           if (response.type === "opaque") {
             throw err
           }
-        } catch() {}
+        } catch(e) {
+          console.log('')
+        }
         return response[config.errorType]().then((body: string) => {
           err.message = body
           err[config.errorType] = body
