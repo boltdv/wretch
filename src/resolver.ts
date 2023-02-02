@@ -62,7 +62,7 @@ export const resolver = <T, Chain, R>(wretch: T & Wretch<T, Chain, R>) => {
             throw err
           }
         } catch(e) {
-          console.log('')
+          console.log("")
         }
         return response[config.errorType]().then((body: string) => {
           err.message = body
